@@ -13,7 +13,10 @@ test.describe("testing for home tablet", () => {
         const mainContainer = page.locator('#colouring');
 
         const checkingBackgroundColour = await mainContainer.evaluate((ele) => {
-
+            return window.getComputedStyle(ele).getPropertyValue("background-colour")
         })
+
+        console.log(checkingBackgroundColour);
+        expect(checkingBackgroundColour).toBe("rgb(0,0,255");
     })
 })
